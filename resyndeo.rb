@@ -10,16 +10,16 @@ class Resyndeo < Formula
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/Syndeo-AI/terminal-ui/releases/download/v0.1.0/resyndeo_darwin_amd64.tar.gz"
-    sha256 "15dd011ad9d80cfd5f73c5eca806e2ff2dd2fdd12b33f1018b0c942b2eac48a2"
+    url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.1.0/resyndeo_darwin_amd64.tar.gz"
+    sha256 "74aa749b6d841f9864ce2310083a4c1c3cf2f1030f4518d5fc4ebe91ffc75ce6"
 
     define_method(:install) do
       bin.install "resyndeo"
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/Syndeo-AI/terminal-ui/releases/download/v0.1.0/resyndeo_darwin_arm64.tar.gz"
-    sha256 "12fdb644b9cfa1433077a887a335d62ed738aa555205f4999c5b7be9e05e4626"
+    url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.1.0/resyndeo_darwin_arm64.tar.gz"
+    sha256 "f2ffc36d9edce4cd1484566d9ebc5ebf45b32a7abdb8375df6ea425668771487"
 
     define_method(:install) do
       bin.install "resyndeo"
