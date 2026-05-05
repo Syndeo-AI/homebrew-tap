@@ -9,6 +9,7 @@ class Resyndeo < Formula
   license "proprietary"
 
   depends_on "helm"
+  depends_on "k3d"
   depends_on :macos
 
   if Hardware::CPU.intel?
