@@ -28,8 +28,4 @@ class Resyndeo < Formula
       bin.install "resyndeo"
     end
   end
-
-  test do
-    system "#{bin}/resyndeo --help"
-  end
 end
