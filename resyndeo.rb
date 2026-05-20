@@ -5,7 +5,7 @@
 class Resyndeo < Formula
   desc "macOS installer for Syndeo's local k3d cluster."
   homepage "https://resyndeo.com"
-  version "0.11.0"
+  version "0.12.0"
   license "proprietary"
 
   depends_on "helm"
@@ -13,16 +13,16 @@ class Resyndeo < Formula
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.11.0/resyndeo_darwin_amd64.tar.gz"
-    sha256 "776ec859ae2b7219f85737219e1bc56db363959a8f97f2e787004c266f1ac0a0"
+    url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.12.0/resyndeo_darwin_amd64.tar.gz"
+    sha256 "e7e0a9cdef6cb197a3a776bc6edf3bdd1f9087325c004ab0dd7a9d5bb5206ef4"
 
     define_method(:install) do
       bin.install "resyndeo"
     end
   end
   if Hardware::CPU.arm?
-    url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.11.0/resyndeo_darwin_arm64.tar.gz"
-    sha256 "0a5754e85741002bde631d068046e747ec6300078e6e1904551d447b3669e50f"
+    url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.12.0/resyndeo_darwin_arm64.tar.gz"
+    sha256 "0a3b13f6963fabc54cc105eb499e124317a6999b23a991872d4e673c2b715656"
 
     define_method(:install) do
       bin.install "resyndeo"
