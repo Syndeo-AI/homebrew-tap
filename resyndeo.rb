@@ -5,27 +5,45 @@
 class Resyndeo < Formula
   desc "macOS installer for Syndeo's local k3d cluster."
   homepage "https://resyndeo.com"
-  version "0.14.0"
+  version "0.15.0"
   license "proprietary"
 
   depends_on "helm"
   depends_on "k3d"
-  depends_on :macos
 
-  if Hardware::CPU.intel?
-    url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.14.0/resyndeo_darwin_amd64.tar.gz"
-    sha256 "ca15cf675c64a7fe65f698c5b906191b3e76ccd3b65f6dde27f2f2f9d61a8e02"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.15.0/resyndeo_darwin_amd64.tar.gz"
+      sha256 "43efc070be5b2830961b3a3942975471cdf215833ed9ca64c7d7aa7784c77b42"
 
-    define_method(:install) do
-      bin.install "resyndeo"
+      define_method(:install) do
+        bin.install "resyndeo"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.15.0/resyndeo_darwin_arm64.tar.gz"
+      sha256 "b962b6e85b112b87f2194c800d620498160262558abf7887604f45d06384dda8"
+
+      define_method(:install) do
+        bin.install "resyndeo"
+      end
     end
   end
-  if Hardware::CPU.arm?
-    url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.14.0/resyndeo_darwin_arm64.tar.gz"
-    sha256 "46d0a1729d2bde93600cf41ec7837e8c542f2b58dda8d772e9096a96ffc26d11"
 
-    define_method(:install) do
-      bin.install "resyndeo"
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.15.0/resyndeo_linux_amd64.tar.gz"
+      sha256 "02dbe8f5c401a08ac9b45a0d84401d8e81bd1fb5e2c2faf20e4ff9fa8ed09617"
+      define_method(:install) do
+        bin.install "resyndeo"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.15.0/resyndeo_linux_arm64.tar.gz"
+      sha256 "a1e80349c842d157b2dc526c67f70bf7a79690e7214bb2f20763dbbeeb6db6ff"
+      define_method(:install) do
+        bin.install "resyndeo"
+      end
     end
   end
 end
