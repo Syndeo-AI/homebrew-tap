@@ -14,7 +14,7 @@ class Resyndeo < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.17.0/resyndeo_darwin_amd64.tar.gz"
-      sha256 "17347c29eff2c2f5c4ef243fd01b62710cc54e98558c473db12a016d23124498"
+      sha256 "b8a1b22acdcdcc75a3af7604668b943e635d744f5cf5c51b8753ea5c572536b9"
 
       define_method(:install) do
         bin.install "resyndeo"
@@ -22,7 +22,7 @@ class Resyndeo < Formula
     end
     if Hardware::CPU.arm?
       url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.17.0/resyndeo_darwin_arm64.tar.gz"
-      sha256 "8f3cfec6cdae32ef16770cacb8474e1b713f9c2243971cc8fc17ec67a38b6ac7"
+      sha256 "e6b4f2e6aa40669238cb09bbf527e0e5e22323d9b4fb96a2210a57ab9c69bec1"
 
       define_method(:install) do
         bin.install "resyndeo"
@@ -33,14 +33,14 @@ class Resyndeo < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.17.0/resyndeo_linux_amd64.tar.gz"
-      sha256 "2652ca43843d357b20c0ddadccf892812ba858b7cbfd8960f59cbf734dee6ccd"
+      sha256 "36a07cadf8d4c1d2ca3a35837e0123a1ebf4e8cdd9f47f838a920376f326c407"
       define_method(:install) do
         bin.install "resyndeo"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.17.0/resyndeo_linux_arm64.tar.gz"
-      sha256 "2a59c409921bcc30cc8b7e47ffe0756542c3a6be406567d07b1bf2bf787467b2"
+      sha256 "9e3f1bc2309b6cb6742206a9c3ef0577def038d5e5f5c013eddbbbd84ece2da3"
       define_method(:install) do
         bin.install "resyndeo"
       end
