@@ -15,7 +15,7 @@ cask "resyndeo" do
   homepage "https://resyndeo.com"
 
   app "Resyndeo.app"
-  binary "#{appdir}/Resyndeo.app/Contents/MacOS/resyndeo"
+  binary "#{appdir}/Resyndeo.app/Contents/MacOS/resyndeo-cli", target: "resyndeo"
 
   zap trash: [
     "~/.config/resyndeo",
