@@ -14,6 +14,9 @@ cask "resyndeo" do
   desc "Manage your local Resyndeo cluster from the desktop"
   homepage "https://resyndeo.com"
 
+  depends_on formula: "helm@3"
+  depends_on formula: "k3d"
+
   app "Resyndeo.app"
   binary "#{appdir}/Resyndeo.app/Contents/MacOS/resyndeo-cli", target: "resyndeo"
 
