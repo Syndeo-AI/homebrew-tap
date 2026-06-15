@@ -5,9 +5,9 @@
 cask "resyndeo" do
   arch arm: "arm64", intel: "amd64"
 
-  version "0.35.0"
-  sha256 arm:   "66623c44795196aa9d75882cac5d6e64bfdc79fdd21d9dd426eba51f649667b0",
-         intel: "1f31bbc170f51b91ae925dfab63884ef0237ca8d18c850146ec784759771407e"
+  version "0.36.0"
+  sha256 arm:   "e93d2c52e54ff61de5fd7a67e557de4c7398d57d946ec82ff3ed76ea8fa96e5c",
+         intel: "3cdbe42e47c57bd345c8540310f6f1d56682e249ecd84eaa266647bf03845ee3"
 
   url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v#{version}/Resyndeo-darwin-#{arch}.dmg"
   name "Resyndeo"
