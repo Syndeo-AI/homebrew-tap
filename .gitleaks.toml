@@ -1,0 +1,25 @@
+title = "Resyndeo gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Known non-secret patterns for open-source scanning"
+paths = [
+  '''(?:^|/)atlas\.sum$''',
+  '''(?:^|/)\.env\.example$''',
+  '''(?:^|/)superpowers/''',
+  '''(?:^|/)internal/platform/config/.*_test\.go$''',
+  '''(?:^|/)internal/config/config_test\.go$''',
+  '''(?:^|/)\.gitleaks\.toml$''',
+  '''(?:^|/)scripts/check-public-ready\.sh$''',
+]
+regexes = [
+  '''^syndeo/''',
+  '''remoteKey:\s*syndeo/''',
+  '''remoteKey=syndeo/''',
+  '''SYNDEO_CLUSTER_JWT_KEY=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=''',
+  '''Bearer \$[A-Z_]+''',
+  '''Bearer <[^>]+>''',
+  '''Bearer (good|tok|dev|fake-token|not-a-jwt|UPLOAD_TOKEN_PLACEHOLDER|jwt-abc)''',
+]
