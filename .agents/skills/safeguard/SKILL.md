@@ -1,12 +1,13 @@
 ---
 name: safeguard
 description: >
-  Interviews the user before non-trivial implementation to ensure they
-  understand why, what, codebase impact, and company necessity — preventing
-  damage from building without a plan. Use when starting a feature, build,
-  or refactor; user says "safeguard", "/safeguard", "understand before code",
-  or "before building"; or AGENTS.md routes non-trivial work here. Not for
-  clear bug fixes (use clarify) or when a detailed plan/issue already exists.
+  REQUIRED before any non-trivial feature, build, or refactor: read and
+  follow this skill as your first action before code, scaffolding, plans, or
+  exploratory edits. AGENTS.md mandates this. Interviews the user on company
+  necessity, what/why, codebase impact, and scope. Also when user says
+  "safeguard", "/safeguard", "understand before code", or "before building".
+  Not for clear bug fixes (use clarify) or when a detailed plan/issue already
+  exists.
 ---
 
 # Safeguard
@@ -14,6 +15,24 @@ description: >
 Interview before implementation so the user understands how the work fits
 the company and the codebase. One question at a time. Exit when all four
 pillars are concrete enough to build safely — or when the user opts out.
+
+<EXTREMELY-IMPORTANT>
+If the task adds behavior, crosses siblings, or reshapes architecture, you
+**must invoke this skill before any other tool use** (except readonly context
+gathering in checklist step 1).
+
+**Platform:** In Claude Code, invoke via the **Skill tool** (`safeguard`) — do
+not Read this file. In Cursor, Read this file at
+`.agents/skills/safeguard/SKILL.md`.
+
+Do not rationalize skipping because the request "seems simple."
+
+Subagents dispatched for implementation must also follow safeguard unless
+the parent session already completed a Build Brief in the same thread.
+
+This is not negotiable. This is not optional. You cannot rationalize your
+way out of this when the task is non-trivial.
+</EXTREMELY-IMPORTANT>
 
 <HARD-GATE>
 During the interview, do NOT write code, edit files, commit, scaffold, or
