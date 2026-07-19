@@ -5,7 +5,7 @@
 class Resyndeo < Formula
   desc "CLI for managing a local Resyndeo cluster."
   homepage "https://resyndeo.com"
-  version "0.45.0"
+  version "0.46.0"
   license "proprietary"
 
   depends_on "helm@3"
@@ -13,16 +13,16 @@ class Resyndeo < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.45.0/resyndeo_darwin_amd64.tar.gz"
-      sha256 "cf61f49b939f2891b1855df7ec4235331d5195ce69e4efcea5cfac5c36d1a98f"
+      url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.46.0/resyndeo_darwin_amd64.tar.gz"
+      sha256 "fe2f9af77a8deea06c687047f9ce9dd51477faffad9feaca658d094c6f807a5a"
 
       define_method(:install) do
         bin.install "resyndeo"
       end
     end
     if Hardware::CPU.arm?
-      url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.45.0/resyndeo_darwin_arm64.tar.gz"
-      sha256 "de5b98e47d9a48191947044298f20f14342cc3d280137246f292eceb77144a2b"
+      url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.46.0/resyndeo_darwin_arm64.tar.gz"
+      sha256 "6df917f28e68046c25270b5c89e17f145c3e0449a767c374b6e30e8e997eda94"
 
       define_method(:install) do
         bin.install "resyndeo"
@@ -32,15 +32,15 @@ class Resyndeo < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.45.0/resyndeo_linux_amd64.tar.gz"
-      sha256 "ba317007d692f1edf93bb0c03f0a667db4b5e562951cab19c3263733b67e31ce"
+      url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.46.0/resyndeo_linux_amd64.tar.gz"
+      sha256 "06e5d672f243cbdf572bf43422d430ea7c37f60d8cd9dcbd7b6285f12159f5c0"
       define_method(:install) do
         bin.install "resyndeo"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.45.0/resyndeo_linux_arm64.tar.gz"
-      sha256 "4319685589b1628bf7be7551e990824dd08165ba82f3e9241bfdf063caea9a5b"
+      url "https://syndeo-releases-dev.s3.us-east-1.amazonaws.com/resyndeo/v0.46.0/resyndeo_linux_arm64.tar.gz"
+      sha256 "1e18f1e87456faa04f319ab786ee2b63a973da232980ae5ab586ddddfbf35fac"
       define_method(:install) do
         bin.install "resyndeo"
       end
